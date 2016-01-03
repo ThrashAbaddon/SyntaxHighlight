@@ -262,6 +262,7 @@ try:
     __import__('pygments')
 except ImportError:
     sys.path.insert(0, os.path.join(addons_folder(), "code_highlight_addon"))
+    sys.path.insert(0, os.path.join(addons_folder(), "code_highlight_addon/libs"))
 
 # Choose default language from the last to be used
 #lang_file_path = os.path.join(addons_folder(), "code_highlight_addon", "lang.txt")
@@ -310,7 +311,8 @@ def highlight_code(self):
     # Tell pygments that we will be generating HTML without CSS.
     # HTML without CSS may take more space, but it's self contained.
     
-    my_formatter = HtmlFormatter(linenos=linenos, noclasses=True, font_size=16)
+    my_formatter = HtmlFormatter(linenos=linenos, noclasses=True, font_size=16)
+
     if linenos:
        if centerfragments:
             pretty_code = "".join(["<center>",
