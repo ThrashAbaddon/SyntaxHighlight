@@ -12,3 +12,5 @@ def test_something_else():
 def test_list_is_empty():
     assert len([]) == 0
 
+def test_that_will_fail():
+    assert False, 'AAAAAAAAAAAAAAA'
