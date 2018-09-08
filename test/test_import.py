@@ -9,3 +9,6 @@ def test_something_else():
     assert 'Something here'
 
 
+def test_list_is_empty():
+    assert len([]) == 0
+
